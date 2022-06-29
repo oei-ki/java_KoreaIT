@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>Archetype Created Web Application</display-name>
+
+
+	<servlet>
+		<servlet-name>LifecycleTestServlet</servlet-name>
+		<servlet-class>com.varxyz.jv300.mod003.LifecycleTestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LifecycleTestServlet</servlet-name>
+		<url-pattern>/LifecycleTestServlet.view</url-pattern> <!-- view임의 인거 같음 -->
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ServletConfigTestServlet</servlet-name>
+		<servlet-class>com.varxyz.jv300.mod003.ServletConfigTestServlet</servlet-class>
+		<init-param>
+			<param-name>season_list</param-name><!--String season_list = config.getInitParameter("season_list");가 
+				얘임 -->
+			<param-value>Spring, Summer, Fall, Winter</param-value>
+		</init-param>  <!--받아온 값은 여기의 값 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletConfigTestServlet</servlet-name>
+		<url-pattern>/config.view</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

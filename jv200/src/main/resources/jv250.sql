@@ -16,12 +16,14 @@ INSERT INTO Sample10 VALUES (3, '징비', '2000-09-24', '대구 중구 반월당
 CREATE TABLE Customer (
 	cid			BIGINT			PRIMARY KEY	AUTO_INCREMENT,	/*cid => 통상적으로 id로 통일함*/
 	name		VARCHAR(20)		NOT NULL,
-	ssn			VARCHAR(14)		NOT NULL,
+	ssm			VARCHAR(14)		NOT NULL,
 	phone		VARCHAR(14)		NOT NULL,
 	customerId	VARCHAR(16)		NOT NULL,
 	passwd		VARCHAR(16)		NOT NULL,
 	regDate		TIMESTAMP		NOT NULL    DEFAULT CURRENT_TIMESTAMP
 ) AUTO_INCREMENT = 1001; /*초기 셋팅값 지정해즘*/
+
+ALTER TABLE Customer CHANGE customerId userId VARCHAR(16)	NOT NULL;
 
 SELECT * FROM Customer;
 INSERT INTO Customer (name, ssm, phone, customerId, passwd) 
@@ -63,9 +65,15 @@ DROP TABLE Account;
 
 /*교집합 부분*/
 SELECT * FROM Account , Customer WHERE Account.customerId = Customer.cid AND Customer.ssm= '901212-1234567';
+
 SELECT * FROM Account a INNER JOIN Customer c ON a.customerId = c.cid;
 WHERE c.ssm = '901212-1234567';
 
+SELECT a.aid, a.accountNum, a.balance, a.interertRete, 
+		a.overdraft, a.accountType, c.name, c.ssm, c.phone, a.regDate
+		FROM Account a INNER JOIN Customer c ON a.customerId = c.cid
+		WHERE c.ssm = '901212-1234567';
+		
 
 
 
