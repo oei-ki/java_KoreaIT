@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mod004/add_user")
+@WebServlet("/mod004/add_user.do")
 public class AddUserServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static final String DEFAULT_NAME = "";
@@ -40,12 +40,16 @@ public class AddUserServlet extends HttpServlet{
 		out.println(" <label for='userId'>회원 아이디 : </label>" + userId);
 		out.println(" <label for='userId'>비밀번호 : </label>" + passwd);
 		out.println(" <label for='userId'>주민번호 : </label>" + ssn);
-		out.println(" <label for='userId'>이메일 : </label>" + email1);
+		out.println(" <label for='userId'>이메일 : </label>" + email1 + email2);
 		out.println(" <label for='concerns'>관심분야 : </label>");
 		for(String concern : concerns) {
 			out.println(concern + "&nbsp;");
 		}
 		out.println("</body></html>");
 		out.close(); //IO 종료
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		doGet(request, response);
 	}
 }

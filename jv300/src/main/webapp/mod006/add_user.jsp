@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <style>
-    label {display: block;}
-    .concerns {display: flex;}
-  </style>
-  <form action="add_user" method="post">
+	<style>
+	label {display: block;}
+	</style>
+  <form action="add_user.do" method="post">
     <label for="userId">회원 아이디 : </label>
     <input type="text" name="userId" />
     <label for="password">비밀번호 : </label>
@@ -26,15 +27,8 @@
       <option value="@goolge.com">@goolge.com</option>
       <option value="@daum.net">@daum.net</option>
     </select>
-    <div class="concerns">
-      <label for="servlet/jsp">관심분야 : </label>
-      <input type="checkbox" id="java" name="concerns" value="java">
-      <label for="java">java</label>
-      <input type="checkbox" id="EJB" name="concerns" value="EJB">
-      <label for="EJB">EJB</label>
-      <input type="checkbox" id="servlet/jsp" name="concerns" value="servlet/jsp">
-      <label for="servlet/jsp">servlet/jsp</label>
-    </div>
+    <label for="addr">주소 : </label>
+    <input type="text" name="addr1" /><input type="text" name="addr2" />
     <input type="submit" value="확인">
   </form>
 </body>

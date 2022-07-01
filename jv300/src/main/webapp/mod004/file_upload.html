@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>File Upload Example</h3>
+	<form action="file_upload.do" method="post" enctype="multipart/form-data"> <!--받을 파일이 많아서 get으로 하게 되면 주소창 난리남 --> 
+		첨부파일 : <input type="file" name="attachedFile"/>
+		<input type="submit" value="전송"/>
+	</form> <!-- 파일보낼때 인코드타입을 잡아줘야 함(enctype) --> <!-- multipart => 타입별로 구분해줌(boundary) -->
+</body>
+</html>
