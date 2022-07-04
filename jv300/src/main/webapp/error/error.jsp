@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	 에러남
 	<%
 	List<String> errorMsgs = (List)request.getAttribute("errorMsgs"); 
 	// List<String> errorMsgs = (List)Object errorMsgs;
