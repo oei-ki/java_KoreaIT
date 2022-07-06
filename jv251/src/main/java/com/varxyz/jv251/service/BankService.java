@@ -11,6 +11,7 @@ import com.varxyz.jv251.domain.SavingsAccount;
 import com.varxyz.jv251.exception.CustomerNotFoundException;
 import com.varxyz.jv251.exception.DuplicatedEntityException;
 import com.varxyz.jv251.exception.EntityNotFoundException;
+import com.varxyz.jv251.exception.overdraftException;
 
 public class BankService { //은행의 텔러역할?? 모든기능을 처리하나?
 	private static final BankService service = new BankService();
@@ -90,7 +91,7 @@ public class BankService { //은행의 텔러역할?? 모든기능을 처리하�
 		return accountService.getAccountsBySsn(ssn);
 	}
 	
-	public void withdraw(double amount, String accountNum) {
+	public void withdraw(double amount, String accountNum) throws overdraftException {
 		// 1. 계좌번호를 통해 계좌번호 금액 가져오기 account.getbalance
 		// 2. 계좌번호의 instanceof를 통해 s, c구분
 		// 3. accout를 다운캐스팅해서 withdraw메서드 사용

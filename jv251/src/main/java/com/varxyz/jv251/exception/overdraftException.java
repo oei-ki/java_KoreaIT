@@ -1,17 +1,9 @@
 package com.varxyz.jv251.exception;
 
-@SuppressWarnings("Serial")
-public class overdraftException extends InsufficientBalanceException {
-	private double overdraftAvail;
-	
-	public overdraftException(String msg, double balance, double overdraftAvail) {
-		super(msg, balance);
-		this.overdraftAvail = overdraftAvail;
-		
-		}
+public class overdraftException extends Exception {
 
-		@Override
-		public String getMessage() {
-			return super.getMessage() + " 사용 가능한 대월액은 " + overdraftAvail + " 입니다.";
-		}
+	public overdraftException(String string, double balance, double overdraftNeeded) {
+		// TODO Auto-generated constructor stub
+	}
+
 }

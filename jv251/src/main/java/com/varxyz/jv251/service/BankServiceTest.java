@@ -5,6 +5,7 @@ import java.util.List;
 import com.varxyz.jv251.domain.Account;
 import com.varxyz.jv251.domain.Customer;
 import com.varxyz.jv251.exception.CustomerNotFoundException;
+import com.varxyz.jv251.exception.overdraftException;
 
 public class BankServiceTest {
 
@@ -32,6 +33,11 @@ public class BankServiceTest {
 		for(Account account : myList ) {
 			System.out.println(account);			
 		}
-		service.withdraw(1000,"116-86-935");
+		try {
+			service.withdraw(1000,"116-86-935");
+		} catch (overdraftException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

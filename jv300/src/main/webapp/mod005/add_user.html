@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+<form action="user.do" method="get">
+	<h2>회원가입</h2>
+	<div class='signup'>
+	<span>회원아이디</span><br><input type="text" name="userId"/>
+	<span>비밀번호</span><br><input type="password" name="passwd"/>
+	<span>이름</span><br><input type="text" name="userName"/>
+	<span>주민번호</span><br><input type="text" name="ssn"/>
+	<span>이메일1</span><br><input type="text" name="email"/>
+	<span>이메일2</span><br><input type="text" name="email2"/>@
+	<select>	
+		<option value="" selected>선택</option>
+		<option value="google.com">gmail.com</option>
+		<option value="naver.com">naver.com</option>
+		<option value="daum.net">daum.net</option>
+	</select>
+	관심분야<input type="checkbox" name="concerns" value="Java"/>Java
+	<input type="checkbox" name="concerns" value="Servlet/JSP"/>Servlet/JSP
+	<input type="checkbox" name="concerns" value="EJB"/>EJB
+	<input type="checkbox" name="concerns" value="Android"/>Android
+	<input type="checkbox" name="concerns" value="Spring"/>Spring
+	</div>
+	<input type="submit" value="확인"/>
+</form>
+</body>
+</html>

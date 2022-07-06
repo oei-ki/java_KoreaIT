@@ -1,0 +1,27 @@
+@charset "UTF-8";
+html, body { padding: 0 }
+
+form {
+	text-align: center;
+}
+
+.signup {
+	
+}
+
+article {
+	margin-bottom: 20px;
+}
+
+span {
+	text-align: left;
+}
+
+input {
+	position: relative;
+}
+
+select {
+	width: 171px;
+	height: 21px;
+}

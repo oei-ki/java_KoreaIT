@@ -25,7 +25,7 @@ public class CheckingAccount extends Account{
 	}
 
 
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws overdraftException {
 
 		if(balance < amount) {
 			//잔고부족시 overdraftAmount 금액 한도 내에서 추가 출금을 승인+
