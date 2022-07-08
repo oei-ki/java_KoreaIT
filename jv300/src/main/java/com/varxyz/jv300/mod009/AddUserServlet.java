@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.varxyz.jv300.mod009.UserService;
+import com.varxyz.jv300.mod009.User;
 
 @WebServlet("/mod009/add_user.do")
 public class AddUserServlet extends HttpServlet {

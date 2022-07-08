@@ -5,8 +5,8 @@
 	<h4><%=URLDecoder.decode(request.getParameter("subtitle"), "UTF-8") %></h4>
 	<ul>
 		<li>
-			<a href="http://http://localhost:8080/jv300/mod009/add_user.do">고객등록현황</a>>
+			<a href="/jv300/mod009/findUser.do"/>고객등록현황</a> 
 		</li>
-	</ul>>
+	</ul>
 	<%-- --%>
 </div>

@@ -20,6 +20,7 @@
 		<jsp:include page="header.jsp">
 			<jsp:param name="subtitle" value=" mod009 : Java Beans and include" />
 		</jsp:include>
+		
 	</div>
 	<div id="content-wrapper">
 		<form action="add_user.do" method="post">

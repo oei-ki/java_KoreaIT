@@ -1,9 +1,7 @@
-package com.varxyz.jv300.mod009;
+package com.varxyz.jv300.mod010;
 
 import java.sql.*;
 import java.util.*;
-
-import com.varxyz.jv300.mod009.User;
 
 public class UserDao {
 	
@@ -67,6 +65,31 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return userList;
+	}
+	
+	public boolean isValidUser(String userId, String passwd) { //주민번호로 고객조회하는 메소드
+		String sql = "SELECT * FROM Users WHERE userId= ? AND passwd=? ";
+		boolean boo = true;
+		try {
+			 Connection con = null;
+			 PreparedStatement pstmt = null;
+			 ResultSet rs = null;
+			 try {
+				 con = dataSource.getConnection();
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, userId); //위 where?로 조회하는거임
+					pstmt.setString(2, passwd);
+					rs = pstmt.executeQuery();  /*rs 객체의 값을 반환 , SELECT 구문을 수행*/
+					if(!rs.next()) {
+						boo = false;
+					}
+			} finally {
+				dataSource.close(rs,pstmt,con);	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return boo;
 	}
 	
 }
