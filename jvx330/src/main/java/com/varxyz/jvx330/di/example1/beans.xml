@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="foo" class="com.varxyz.jvx330.di.example1.Foo">
+		<constructor-arg ref="bar"/> <!-- foo에 받는 아규먼트가 있다 생성자에 bar를 넣는다 -->
+		<!-- ref=여기는 beans의 객체를 가리킴 (<bean name="bar" class="com.varxyz.jvx330.di.example1.Bar"/> 이놈) -->
+	</bean>
+	
+	<bean name="foo2" class="com.varxyz.jvx330.di.example1.Foo">
+		<property name="bar" ref="bar"/>
+		<!-- 프로퍼티는 위 constructor(생성자)를 제외한 메서드에서 찾는듯?? -->
+		<!-- 프로퍼티의 name은 foo클래스의 set,get을 찾아내 그 뒤의 이름을 소문자하여 찾아낸 -->
+		<!-- ref=여기는 beans의 객체를 가리킴 (<bean name="bar" class="com.varxyz.jvx330.di.example1.Bar"/> 이놈) -->
+	</bean>
+	
+	
+	<bean name="bar" class="com.varxyz.jvx330.di.example1.Bar"/>
+</beans>

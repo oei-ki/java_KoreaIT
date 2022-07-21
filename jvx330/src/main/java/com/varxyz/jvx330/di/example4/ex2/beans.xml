@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="byTypeClient" class="com.varxyz.jvx330.di.example4.ex2.ByTypeClient" autowire="byType"/> <!--autowire로 다 정리했다는데..얘가 jms프로퍼티를 가져왔다는데 왜..   -->
+	<!--autowire은 네가지 타입을 사용하지만 보통 ByName , ByType 이 두가지 타입 사용함(Type더 많이 사용)-->
+	<!--<bean name="jmsNamingService" class="com.varxyz.jvx330.di.example4.ex2.JmsNamingServiceImpl"/>-->
+	<bean name="dnsNamingService" class="com.varxyz.jvx330.di.example4.ex2.DnsNamingServiceImpl"/>
+</beans>
