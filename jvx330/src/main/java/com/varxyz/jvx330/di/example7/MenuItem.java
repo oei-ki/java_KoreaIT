@@ -1,7 +1,12 @@
 package com.varxyz.jvx330.di.example7;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
+@EqualsAndHashCode
 public class MenuItem {
 	private String name;
 	private double price;
@@ -10,19 +15,6 @@ public class MenuItem {
 	public MenuItem(String name, double price) {
 		super();
 		this.name = name;
-		this.price = price;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
 		this.price = price;
 	}
 	

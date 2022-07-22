@@ -8,7 +8,7 @@ import javax.management.RuntimeErrorException;
 
 import org.springframework.stereotype.Component;
 
-@Component("menuItemDao")
+@Component("menuItemDao") //빈 자동생성 
 public class MenuItemDao {
 	private static final List<MenuItem> MENU = new ArrayList<MenuItem>();
 	
