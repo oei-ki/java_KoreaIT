@@ -25,7 +25,9 @@ public class CustomerDao {
 
 			@Override
 			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Customer customer = new Customer(rs.getLong("cid"),rs.getString("email"),rs.getString("name"),rs.getString("passwd"),rs.getString("ssn"),rs.getString("phone"),rs.getTimestamp("regDate"));
+				Customer customer = new Customer(rs.getLong("cid"),rs.getString("email"),
+						rs.getString("name"),rs.getString("passwd"),rs.getString("ssn"),
+						rs.getString("phone"),rs.getTimestamp("regDate"));
 				return customer;  //for문 처럼 만들었다는데...
 			}
 		});
@@ -42,7 +44,7 @@ public class CustomerDao {
 				Customer customer = new Customer(rs.getLong("cid"),rs.getString("email"),
 						rs.getString("name"),rs.getString("passwd"),rs.getString("ssn"),
 						rs.getString("phone"),rs.getTimestamp("regDate"));
-				return customer; 
+				return customer;  //int rowNum 큰 영향없는듯 신경쓰지 마
 			}
 		}, regDate); //regDate 조건준거임 그래서 아규먼트에 들어가서 값 가져온거
 	}
@@ -52,7 +54,7 @@ public class CustomerDao {
 				+ "FROM Customer WHERE email=?"; 
 		
 		return jdbcTemplate.queryForObject(sql, new RowMapper<Customer>() {
-
+				//queryForObject는 하나의 결과값만 필요할때
 			@Override
 			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Customer customer = new Customer(rs.getLong("cid"),rs.getString("email"),
@@ -60,7 +62,7 @@ public class CustomerDao {
 						rs.getString("phone"),rs.getTimestamp("regDate"));
 				return customer; 
 			}
-		}, email); //regDate 조건준거임 그래서 아규먼트에 들어가서 값 가져온거
+		}, email); //email 조건준거임 그래서 아규먼트에 들어가서 값 가져온거
 	}
 	
 	public long countCustomers() {

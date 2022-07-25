@@ -1,19 +1,17 @@
-package com.varxyz.jvx330.jdbc;
-
+package com.varxyz.jvx330.jdbc.example5;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.Import;
 
-import com.varxyz.jvx330.jdbc.example1.AddCustomerDao;
-import com.varxyz.jvx330.jdbc.example1.AddCustomerDataSourceDao;
-import com.varxyz.jvx330.jdbc.example2.CustomerDao;
-import com.varxyz.jvx330.jdbc.example5.AccountDao;
+import com.varxyz.jvx330.jdbc.DataSourceConfig;
 
 @Configuration
-public class DataSourceConfig {
-	
+@Import(DataSourceConfig.class)
+@ComponentScan(basePackages = "com.varxyz.jvx330.jdbc.example5") //이게 최상위로 잡히고 그 밑에 패키지의 경로도 다 스캔한다는 말?
+public class Exapmle5Config {
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {  //dataSource클로즈는 종료가 아니라 다시 불러들이는거임?
 		DataSource ds = new DataSource();
@@ -26,30 +24,4 @@ public class DataSourceConfig {
 		ds.setMaxIdle(10);    //풀에 유지할 수 있는 최대 커넥션 수(기본값은 maxActive와 동일)
 		return ds;
 	}
-	
-	@Bean
-	public JdbcTemplate jdbcTemplate() {
-		return new JdbcTemplate(dataSource());
-	}
-	
-	@Bean
-	public AddCustomerDataSourceDao addCustomerDataSourceDao() {
-		return new AddCustomerDataSourceDao(dataSource());
-	}
-	
-	@Bean
-	public AddCustomerDao addCustomerDao() {
-		return new AddCustomerDao(dataSource());
-	}
-	
-	@Bean
-	public CustomerDao customerDao() {
-		return new CustomerDao(dataSource());
-	}
-	
-	@Bean
-	public AccountDao accountDao() {
-		return new AccountDao(dataSource());
-	}
-
 }

@@ -63,5 +63,5 @@ public class AddCustomerDao {
 		};
 		jdbcTemplate.update(creator, keyHolder);
 		return keyHolder.getKey().longValue();
-	}
+	}  //pk를 받는..?
 }
