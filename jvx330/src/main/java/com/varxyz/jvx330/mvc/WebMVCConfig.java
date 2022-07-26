@@ -43,5 +43,4 @@ public class WebMVCConfig implements WebMvcConfigurer{
 	public void addResourceHandler(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
-	
 }

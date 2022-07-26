@@ -12,7 +12,7 @@ public class HelloController {
 	public ModelAndView SayHello() {
 		String greeting = "Hello! 윤정 스프링 MVC";
 		
-		//model객체를 이용해, view로 data 전달
+		//model(화면?보여주는데이터)객체를 이용해, view로 data 전달 (뷰에서 보여질 데이터가 모델임)
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("example1/hello"); //forward랑 같은 역할 (jsp경로임)
 		
