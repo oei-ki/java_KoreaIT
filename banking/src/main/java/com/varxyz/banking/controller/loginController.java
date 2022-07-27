@@ -36,6 +36,7 @@ public class loginController {
 		HttpSession session = request.getSession();
 		Customer customer = customerDao.getCustomer(userId);
 		session.setAttribute("customer", customer);
+		session.setAttribute("userId", userId);
 		
 		return "banking/main";
 	}

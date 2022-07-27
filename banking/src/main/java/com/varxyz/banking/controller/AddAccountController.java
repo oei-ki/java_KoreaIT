@@ -47,6 +47,7 @@ public class AddAccountController {
 			
 		
 		List<Account> accountList = accountService.getAccounts(userId);
+		System.out.println(userId);
 		request.setAttribute("accountList", accountList);
 		return "banking/success_addaccount";
 	}

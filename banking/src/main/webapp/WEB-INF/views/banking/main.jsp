@@ -20,6 +20,6 @@
 	</form>
 		<button><a href="/jvx330/banking/addaccount">신규계좌생성</a></button>
 		<button type="button" onclick="location.href='<c:url value="success_addaccount"/>' ">계좌확인</a></button>
-	
+		<button type="button" onclick="location.href='<c:url value="success_addaccount"/>' ">이체하기</a></button>
 </body>
 </html>

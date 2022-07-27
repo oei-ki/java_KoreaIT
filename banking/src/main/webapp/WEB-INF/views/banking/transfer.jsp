@@ -9,12 +9,6 @@
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/default.css'/>"/>
 </head>
 <body>
-	<h1>계좌 확인</h1> 
-	<c:forEach var="view" items="${accountList}">	
-		<label>계좌번호 : </label>${view.accountNum }<br>
-		<label>계좌종류 : </label>${view.accType }<br>
-		<label>잔액 : </label>${view.balance }<br>
-		<label>이자율 : </label>${view.interestRate }<br>
-	</c:forEach>
+	
 </body>
 </html>
