@@ -6,7 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.varxyz.banking.account.AccountDao;
+import com.varxyz.banking.account.AccountServiceImpl;
 import com.varxyz.banking.cutomer.CustomerDao;
+import com.varxyz.banking.cutomer.CustomerServiceImpl;
 
 @Configuration
 @ComponentScan(basePackages = "com.varxyz.banking.customer")
@@ -33,5 +36,20 @@ public class DataSourceConfig {
 	@Bean
 	public CustomerDao customerDao() {
 		return new CustomerDao(dataSource());
+	}
+	
+	@Bean
+	public AccountDao accountDao() {
+		return new AccountDao(dataSource());
+	}
+	
+	@Bean
+	public CustomerServiceImpl customerService() {
+		return new CustomerServiceImpl();
+	}
+	
+	@Bean
+	public AccountServiceImpl accountService() {
+		return new AccountServiceImpl();
 	}
 }
