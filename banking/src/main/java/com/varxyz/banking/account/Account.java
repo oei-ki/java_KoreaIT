@@ -2,7 +2,7 @@ package com.varxyz.banking.account;
 
 import java.util.Date;
 
-import com.varxyz.banking.cutomer.Customer;
+import com.varxyz.banking.customer.Customer;
 
 import lombok.Getter;
 import lombok.Setter;

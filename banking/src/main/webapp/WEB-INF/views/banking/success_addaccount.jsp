@@ -10,11 +10,11 @@
 </head>
 <body>
 	<h1>계좌 확인</h1> 
-	<c:forEach var="view" items="${accountList}">	
-		<label>계좌번호 : </label>${view.accountNum }<br>
-		<label>계좌종류 : </label>${view.accType }<br>
-		<label>잔액 : </label>${view.balance }<br>
-		<label>이자율 : </label>${view.interestRate }<br>
+	<c:forEach var="view" items="${accountList}">
+		<li>계좌번호 : ${view.accountNum }</li>	
+		<li>계좌종류 : ${view.accType }</li>	
+		<li>잔액 : ${view.balance }</li>	
+	-------------------------------------------------------<br>
 	</c:forEach>
 </body>
 </html>

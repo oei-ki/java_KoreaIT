@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.varxyz.banking.cutomer.Customer;
+import com.varxyz.banking.customer.Customer;
 
 
 

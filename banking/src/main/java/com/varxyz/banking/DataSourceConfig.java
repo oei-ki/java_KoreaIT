@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.varxyz.banking.account.AccountDao;
 import com.varxyz.banking.account.AccountServiceImpl;
-import com.varxyz.banking.cutomer.CustomerDao;
-import com.varxyz.banking.cutomer.CustomerServiceImpl;
+import com.varxyz.banking.customer.CustomerDao;
+import com.varxyz.banking.customer.CustomerServiceImpl;
 
 @Configuration
 @ComponentScan(basePackages = "com.varxyz.banking.customer")

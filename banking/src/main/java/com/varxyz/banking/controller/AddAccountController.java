@@ -17,8 +17,8 @@ import com.varxyz.banking.account.AccountDao;
 import com.varxyz.banking.account.AccountServiceImpl;
 import com.varxyz.banking.account.CheckingAccount;
 import com.varxyz.banking.account.SavingAccount;
-import com.varxyz.banking.cutomer.Customer;
-import com.varxyz.banking.cutomer.CustomerServiceImpl;
+import com.varxyz.banking.customer.Customer;
+import com.varxyz.banking.customer.CustomerServiceImpl;
 
 
 
@@ -44,6 +44,8 @@ public class AddAccountController {
 	public String findAccountForm(HttpServletRequest request) {
 		HttpSession session = request.getSession();		
 		String userId = (String)session.getAttribute("userId");
+//		Customer customer = (Customer)session.getAttribute("customer");
+//		String uId = customer.getUserId();
 			
 		
 		List<Account> accountList = accountService.getAccounts(userId);

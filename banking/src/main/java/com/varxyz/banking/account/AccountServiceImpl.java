@@ -19,17 +19,17 @@ public class AccountServiceImpl implements AccountService{
 	public List<Account> getAccounts(String userId) {
 		return accountDao.getAccounts(userId);
 	}
-//
-//	@Override
-//	public long getBalance(String accountNum) {
-//		return accountDao.getBalance(accountNum);
-//	}
-//
-//	@Override
-//	public void transfer(double money, String withdrawAccountNum, String depositAccountNum) {
-//		accountDao.transfer(money, withdrawAccountNum, depositAccountNum);
-//		
-//	}
+
+	@Override
+	public long getBalance(String accountNum) {
+		return accountDao.getBalance(accountNum);
+	}
+
+	@Override
+	public void transfer(double money, String withdrawAccountNum, String depositAccountNum) {
+		accountDao.transfer(money, withdrawAccountNum, depositAccountNum);
+		
+	}
 //
 //	@Override
 //	public void saveInterest(String accountNum, double interestRate) {

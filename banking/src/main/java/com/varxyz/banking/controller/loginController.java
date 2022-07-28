@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.varxyz.banking.cutomer.Customer;
-import com.varxyz.banking.cutomer.CustomerDao;
+import com.varxyz.banking.customer.Customer;
+import com.varxyz.banking.customer.CustomerDao;
 
 @Controller
 public class loginController {

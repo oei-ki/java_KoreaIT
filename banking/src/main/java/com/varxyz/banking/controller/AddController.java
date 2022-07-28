@@ -1,3 +1,4 @@
+
 package com.varxyz.banking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.varxyz.banking.DataSourceConfig;
-import com.varxyz.banking.cutomer.Customer;
-import com.varxyz.banking.cutomer.CustomerCommand;
-import com.varxyz.banking.cutomer.CustomerServiceImpl;
+import com.varxyz.banking.customer.Customer;
+import com.varxyz.banking.customer.CustomerCommand;
+import com.varxyz.banking.customer.CustomerServiceImpl;
 
 @Controller("customer.addController")
 public class AddController {
