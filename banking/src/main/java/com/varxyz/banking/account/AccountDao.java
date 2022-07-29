@@ -8,6 +8,8 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.varxyz.banking.customer.Customer;
+
 public class AccountDao {
 	private JdbcTemplate jdbcTemplate;
 	
@@ -56,12 +58,12 @@ public class AccountDao {
 		jdbcTemplate.update(sql2, money, depositAccountNum);
 	}
 
-//	public void saveInterest(String accountNum, double interestRate) {
-//		String sql = "UPDATE Account SET balance = balance + "
-//				+ "(balance * (balance / ?)) WHERE accountNum=?";
-//		jdbcTemplate.update(sql, interestRate, accountNum);
-//	}
-//	
+	public void saveInterest(String accountNum, double interestRate) {
+		String sql = "UPDATE Account SET balance = balance + "
+				+ "(balance * (balance / ?)) WHERE accountNum=?";
+		jdbcTemplate.update(sql, interestRate, accountNum);
+	}
+	
 	
 	
 	public long getBalance(String accountNum) {
@@ -70,6 +72,12 @@ public class AccountDao {
 		
 		return jdbcTemplate.queryForObject(sql, Long.class, accountNum);
 	}
+	
+	public void deposit(double money, String accountNum) {
+		String sql = "UPDATE Account1 SET balance = balance + ? WHERE accountNum=?";
+		jdbcTemplate.update(sql, money, accountNum);
+	}
+
 	
 	//@Transactional 사용해서 이체
 	

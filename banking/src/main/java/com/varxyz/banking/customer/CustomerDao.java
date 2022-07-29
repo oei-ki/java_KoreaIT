@@ -52,7 +52,7 @@ public class CustomerDao {
 				@Override
 				public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 					Customer customer = new Customer(rs.getLong("cid"),
-							rs.getString("email"), rs.getString("passwd"), 
+							rs.getString("userId"), rs.getString("passwd"), 
 							rs.getString("name"), rs.getString("ssn"),
 							rs.getString("phone"), rs.getTimestamp("regDate"));
 					return customer;

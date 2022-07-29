@@ -22,7 +22,18 @@ public class loginController {
 		return "banking/login";
 	}
 	
-	@PostMapping("/banking/login")
+	@GetMapping("/banking/main")
+	public String mainForm(HttpServletRequest request) {
+		String userId = request.getParameter("userId");
+		HttpSession session = request.getSession();
+		Customer customer = customerDao.getCustomer(userId);
+		session.setAttribute("customer", customer);
+		session.setAttribute("userId", userId);
+		return "banking/main";
+	}
+	//request가 아니라 session임 고쳐..
+	
+	@PostMapping("/banking/main")
 	public String login( HttpServletRequest request) {
 		String userId = request.getParameter("userId");
 		String passwd = request.getParameter("passwd");

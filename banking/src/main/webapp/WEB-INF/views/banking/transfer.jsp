@@ -9,14 +9,16 @@
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/default.css'/>"/>
 </head>
 <body>
+<form action="transfer" method="post">
 	계좌선택 : 
 	<select name="withdrawAccountNum">
 	<c:forEach var="account" items="${accountList}">	
-		 <option value="account">${account.accountNum }</option>
+		 <option value=${account.accountNum }>${account.accountNum }</option>
 	</c:forEach>
 	</select>
 	이체금액 : <input type="text" name="sendMoney">
 	상대방계좌 : <input type="text" name="depositAccountNum">
 	<button type="submit">송금</button>
+</form>
 </body>
 </html>

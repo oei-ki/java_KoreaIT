@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.varxyz.banking.customer.Customer;
+
 
 public class AccountServiceImpl implements AccountService{
 	
@@ -35,6 +37,12 @@ public class AccountServiceImpl implements AccountService{
 //	public void saveInterest(String accountNum, double interestRate) {
 //		accountDao.saveInterest(accountNum, interestRate);
 //	}
+
+	@Override
+	public void deposit(double money, String accountNum) {
+		accountDao.deposit(money, accountNum);
+		
+	}
 
 	
 }

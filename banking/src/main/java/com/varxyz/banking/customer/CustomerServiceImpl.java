@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public Customer getCustomerByAccountNum(String accountNum) {
-		return customerDao.getCustomer(accountNum);
+		return customerDao.getCustomerByAccountNum(accountNum);
 	}
 }
 

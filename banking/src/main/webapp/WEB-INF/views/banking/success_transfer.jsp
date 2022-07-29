@@ -10,5 +10,6 @@
 </head>
 <body>
  	송금이 완료되었습니다.
+ 	<button onclick="location.href='<c:url value="main"/>' ">메인화면</button>
 </body>
 </html>
